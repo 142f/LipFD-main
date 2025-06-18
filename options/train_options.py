@@ -2,7 +2,20 @@ from .base_options import BaseOptions
 
 
 class TrainOptions(BaseOptions):
+    """
+    训练选项类，继承自 BaseOptions。
+    用于定义和解析训练阶段特有的命令行参数。
+    """
     def initialize(self, parser):
+        """
+        初始化解析器，添加训练阶段特有的命令行参数。
+
+        参数:
+            parser: argparse.ArgumentParser 对象。
+
+        返回:
+            argparse.ArgumentParser: 配置好参数的解析器对象。
+        """
         parser = BaseOptions.initialize(self, parser)
         parser.add_argument('--optim', type=str, default='adam', help='optim to use [sgd, adam]')
         parser.add_argument('--loss_freq', type=int, default=100, help='frequency of showing loss on tensorboard')

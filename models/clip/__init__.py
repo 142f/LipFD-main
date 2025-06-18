@@ -1,1 +1,1 @@
-from .clip import *
+from .clip import * # 从当前目录下的 clip.py 文件中导入所有内容，通常用于简化模块的导入
